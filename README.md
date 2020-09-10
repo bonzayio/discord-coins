@@ -5,6 +5,11 @@ Discord bot, which gives users coins for posting images (and tweets) in a certai
 # Features
 - [x] Give coins for posting success images
 - [x] Give coins for posting tweets
+    - Bot checks if the tweet isn't more than a week old, if it's not a retweet and if it has your account mentioned
+- [x] Commands for checking/updating coins
+    - `.coins` returns how many coins you have
+    - `.updatecoins @user + 10` *(Admin only)* adds balance to a user mentioned
+    - `.updatecoins @user - 10` *(Admin only)* substracts balance from a user mentioned
 
 
 # Setting up
@@ -24,3 +29,10 @@ Set up the configuration files. Guide how to do so is [here](https://github.com/
 
 **4.**
 Run `python3 main.py`, that will start the bot!
+
+# License
+Licensed under the MIT License - see the [LICENSE](https://github.com/bonzayio/discord-coins/blob/master/LICENSE) file for more details.
+
+# Author
+
+Made by **[rtuna](https://twitter.com/rtunazzz)**.
