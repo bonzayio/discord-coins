@@ -76,6 +76,9 @@ You will then be putting these 4 keys into the 'twitter.json' file.
 <h1>Configuring the bot</h1> 
 <h3>'aws.json'</h3>
 <h3>'twitter.json'</h3>
+<p align="center">
+  <img width=60% src="../cdn/twitter.png"">
+</p>
 <h3>'discord-token.txt'</h3>
 This is where your Discord Bot token goes. If you don't have a Discord bot yet or don't know how to get the token, follow <a href="https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot">this guide</a>!
 <h3>'config.json'</h3>
