@@ -75,10 +75,39 @@ You will then be putting these 4 keys into the 'twitter.json' file.
 
 <h1>Configuring the bot</h1> 
 <h3>'aws.json'</h3>
+Put your AWS API credentials into the first two.
+
+<b>"bucket_name"</b> is what you named your AWS S3 bucket.
+<p align="center">
+  <img width=60% src="../cdn/aws.png"">
+</p>
 <h3>'twitter.json'</h3>
+Put the credentials you got from your app on Twitter Developer in here.
 <p align="center">
   <img width=60% src="../cdn/twitter.png"">
 </p>
 <h3>'discord-token.txt'</h3>
 This is where your Discord Bot token goes. If you don't have a Discord bot yet or don't know how to get the token, follow <a href="https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot">this guide</a>!
 <h3>'config.json'</h3>
+This file controls the apparence & behavior of the bot.
+<p align="center">
+  <img width=60% src="../cdn/config.png"">
+</p>
+<h5>command_channel_id</h5>
+ID of the channel where users can send commands. (e.g. to check their coin count)
+<h5>success_channel_id</h5>
+ID of the channel where success images gets posted. (Bot will listen for images and tweets in there)
+<h5>verified_role_id</h5>
+Role to be assigned to a user for tweeting success on Twitter
+<h5>embed_settings</h5>
+Appearance of the embed message <i>(color has to be a HEX number)</i>
+<h5>twitter_mention</h5>
+Your Twitter account tag
+<h5>salute_emoji_name</h5>
+Bots reacts with this emoji after an user posts a Tweet into the success channel
+<h5>coins_for_tweet</h5>
+How many coins to give a user for tweeting success
+<h5>coins_for_picture</h5>
+How many coins to give a user for posting a success picture
+
+<h2>That's it for the config!</h2>
