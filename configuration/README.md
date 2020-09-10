@@ -11,7 +11,7 @@
   </a>
 </li>
 <li>
-  <a href="">
+  <a href="https://github.com/bonzayio/discord-coins/tree/master/configuration#configuring-the-bot">
     Configuring the bot
   </a>
 </li>
@@ -21,7 +21,7 @@
 <br>
 <br>
 <br>
-<h1>Creting an AWS S3 Bucket</h1>
+<h1>Creating an AWS S3 Bucket</h1>
 
 First of all, make sure you have an [AWS](https://aws.amazon.com/) account. It's fairly simple to register for AWS, just google around if you get stuck!
 
