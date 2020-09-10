@@ -36,10 +36,11 @@ class Coins(commands.Cog):
         embed = self.h.initialize_embed('Coins')
         if coin_count < 10:
             if coin_count == 1:
-                embed.description = f'You currently have **1 coin**!\n\nYou get coins for posting your success into <#594130475199627264> or posting success on Twitter and tagging `bonzayio`!'
+                embed.description = f'You currently have **1 coin**!\n\nYou get coins for posting your success into <#{self.h.get_success_channel_id()}> or posting success on Twitter and tagging `{self.h.get_twitter_mention()}`!'
             else:
-                embed.description = f'You currently have **{coin_count} coins**.\n\nYou get coins for posting your success into <#594130475199627264> or posting success on Twitter and tagging `bonzayio`!'
-
+                embed.description = f'You currently have **{coin_count} coins**.\n\nYou get coins for posting your success into <#{self.h.get_success_channel_id()}> or posting success on Twitter and tagging `{self.h.get_twitter_mention()}`!'
+        else:
+            embed.description = f'You currently have **{coin_count} coins**.'
         await ctx.send(embed=embed)
 
     @commands.command(name=f"updatecoins",
