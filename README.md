@@ -11,6 +11,10 @@ Discord bot, which gives users coins for posting images (and tweets) in a certai
     - `.updatecoins @user + 10` *(Admin only)* adds balance to a user mentioned
     - `.updatecoins @user - 10` *(Admin only)* substracts balance from a user mentioned
 
+<div align="center">
+<img src="./cdn/updatecoins.png" style="border-radius: 5px;">
+<img src="./cdn/coins.png" style="border-radius: 5px">
+</div>
 
 # Setting up
 You need to have Python installed for this to work.
