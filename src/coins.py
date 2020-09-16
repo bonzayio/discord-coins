@@ -91,14 +91,14 @@ class Coins(commands.Cog):
             try:
                 value = int(sign.replace('-', ''))
             except:
-                send_err()
+                await send_err()
                 return
         else:
             adding = True
             try:
                 value = int(sign.replace('+', ''))
             except:
-                send_err()
+                await send_err()
                 return
 
         coin_count = None
@@ -110,7 +110,7 @@ class Coins(commands.Cog):
                 coin_count = self.BucketHandler.remove_coins(
                     f'{self.coins_folder_name}/{user.id}.json', value)
         except:
-            send_err()
+            await send_err()
             return
 
         embed = self.h.initialize_embed('Balance updated!')
