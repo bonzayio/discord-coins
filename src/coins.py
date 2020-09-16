@@ -28,7 +28,7 @@ class Coins(commands.Cog):
     )
     async def coins(self, ctx: discord.Message, user: discord.User = None) -> None:
         if ctx.channel.id != self.h.get_commands_channel_id():  # commands
-            await ctx.send("Please use this command in the #commands channel.")
+            await ctx.send(f"Please use this command in the <#{self.h.get_commands_channel_id()}> channel.")
             return
 
         file_name = ''
@@ -64,7 +64,7 @@ class Coins(commands.Cog):
                            sign: str,
                            amount: int = None) -> None:
         if ctx.channel.id != self.h.get_commands_channel_id():  # commands
-            await ctx.send("Please use this command in the #commands channel.")
+            await ctx.send(f"Please use this command in the <#{self.h.get_commands_channel_id()}> channel.")
             return
 
         if '+' not in sign and '-' not in sign:

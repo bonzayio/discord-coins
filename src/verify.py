@@ -49,13 +49,8 @@ class SuccessVerify(commands.Cog):
     def __init__(self, client: discord.Client):
         self.h = Helper()
         self.b = BucketHandler()
-        if "DYNO" in os.environ:
-            self.SUCCESS_CHANNEL_ID = self.h.get_success_channel_id()
-            self.VERIFIED_ROLE_ID = self.h.get_verified_role_id()
-        else:
-            # this part is used for testing purposes
-            self.SUCCESS_CHANNEL_ID = 585877748816543767  # channel ID when this isnt running on Heroku
-            self.VERIFIED_ROLE_ID = 726117422456635464  # test role
+        self.SUCCESS_CHANNEL_ID = self.h.get_success_channel_id()
+        self.VERIFIED_ROLE_ID = self.h.get_verified_role_id()
 
         # Set up Twitter API
         with open("configuration/twitter.json") as f:
