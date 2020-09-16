@@ -26,21 +26,31 @@ class Coins(commands.Cog):
         brief="Gets the current coin count.",
         aliases=["getcoins"],
     )
-    async def coins(self, ctx: discord.Message) -> None:
+    async def coins(self, ctx: discord.Message, user: discord.User = None) -> None:
         if ctx.channel.id != self.h.get_commands_channel_id():  # commands
             await ctx.send("Please use this command in the #commands channel.")
             return
 
-        coin_count = self.BucketHandler.get_coins(
-            f'{self.coins_folder_name}/{ctx.author.id}.json')
+        file_name = ''
+        if user:
+            file_name = f'{self.coins_folder_name}/{user.id}.json'
+        else:
+            file_name = f'{self.coins_folder_name}/{ctx.author.id}.json'
+
+        coin_count = self.BucketHandler.get_coins(file_name)
         embed = self.h.initialize_embed('Coins')
+        name = 'You'
+        verb = 'have'
+        if user:
+            name = user.mention
+            verb = 'has'
         if coin_count < 10:
             if coin_count == 1:
-                embed.description = f'You currently have **1 coin**!\n\nYou get coins for posting your success into <#{self.h.get_success_channel_id()}> or posting success on Twitter and tagging `{self.h.get_twitter_mention()}`!'
+                embed.description = f'{name} currently {verb} **1 coin**!\n\nYou get coins for posting success into <#{self.h.get_success_channel_id()}> or posting success on Twitter and tagging `{self.h.get_twitter_mention()}`!'
             else:
-                embed.description = f'You currently have **{coin_count} coins**.\n\nYou get coins for posting your success into <#{self.h.get_success_channel_id()}> or posting success on Twitter and tagging `{self.h.get_twitter_mention()}`!'
+                embed.description = f'{name} currently {verb} **{coin_count} coins**.\n\nYou get coins by posting success into <#{self.h.get_success_channel_id()}> or posting success on Twitter and tagging `{self.h.get_twitter_mention()}`!'
         else:
-            embed.description = f'You currently have **{coin_count} coins**.'
+            embed.description = f'{name} currently {verb} **{coin_count} coins**.'
         await ctx.send(embed=embed)
 
     @commands.command(name=f"updatecoins",
